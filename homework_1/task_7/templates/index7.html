@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+</head>
+<body>
+    {% for item in context %}
+        <h1>{{ item.title }}</h1>
+        <p>{{ item.description }}</p>
+        <p>{{ item.date }}</p>
+    {% endfor %}
+
+</body>
+</html>
