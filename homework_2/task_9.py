@@ -13,7 +13,7 @@
 from flask import Flask, flash, redirect, render_template, request, url_for, make_response
 
 app = Flask(__name__)
-app.secret_key =b'a68d1862772dcbb42725c5824bf05074a206ab04e0097fcd5a3e081b96247aac'
+app.secret_key = b'a68d1862772dcbb42725c5824bf05074a206ab04e0097fcd5a3e081b96247aac'
 
 @app.route('/form', methods=['GET', 'POST'])
 def form():
@@ -41,11 +41,10 @@ def form():
 @app.route('/redirect/<context>', methods=['GET', 'POST'])
 def redirect_to_index(context):
     if request.method == 'POST':
-        response = make_response("Cookie установлен")
-        response.set_cookie('username', '')
-        response.set_cookie('usermail', '')
-        return redirect(url_for('form'))
-
+        response = make_response(redirect(url_for('form')))
+        response.set_cookie('usermail', max_age=0)
+        response.set_cookie('username', max_age=0)
+        return response
     data = eval(context)
     return render_template('hello_redirect.html', data=data)
 
