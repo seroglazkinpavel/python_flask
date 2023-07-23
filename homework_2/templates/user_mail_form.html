@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <form action="/form" method="post">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="mail">
+    </div>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Имя</label>
+      <input type="text" id="disabledTextInput" class="form-control" name="name">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Отправить</button>
+  </form>
+</div>
+{% endblock %}

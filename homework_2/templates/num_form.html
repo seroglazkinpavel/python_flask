@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+  <form action="/" method="post">
+    <label for="num">Введите число</label>
+    <input type="number" id="num" name="num"><br><br>
+    <button type="submit">Отправить</button>
+  </form>
+</div>
+{% endblock %}
