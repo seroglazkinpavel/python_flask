@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center">Каталог одежды</h1>
+  <div class="card-group">
+    <div class="card">
+      <img src="{{ url_for('static', filename='image/jacket.png') }}" class="card-img-top" alt="jacket">
+      <div class="card-body">
+        <h5 class="card-title">Jacket</h5>
+        <p class="card-text">Это более широкая карточка с вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту. Этот контент немного длиннее.</p>
+        <a href="{{ url_for('jacket') }}" class="btn btn-primary">link</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{{ url_for('static', filename='image/jeans.png') }}" class="card-img-top" alt="jeans">
+      <div class="card-body">
+        <h5 class="card-title">Jeans</h5>
+        <p class="card-text">Это более широкая карточка с вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту. Этот контент немного длиннее.</p>
+        <a href="{{ url_for('jeans') }}" class="btn btn-primary">link</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{{ url_for('static', filename='image/shoes.png') }}" class="card-img-top" alt="shoes">
+      <div class="card-body">
+        <h5 class="card-title">Shoes</h5>
+        <p class="card-text">Это более широкая карточка с вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту. Этот контент немного длиннее.</p>
+        <a href="{{ url_for('shoes') }}" class="btn btn-primary">link</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
