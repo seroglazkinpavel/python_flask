@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+  <form action="/" method="post">
+    <label for="log">Имя</label>
+    <input type="text" id="log" name="name"><br><br>
+    <label for="num">Возраст</label>
+    <input type="number" id="num" name="num"><br><br>
+    <button type="submit">Отправить</button>
+  </form>
+</div>
+{% endblock %}
