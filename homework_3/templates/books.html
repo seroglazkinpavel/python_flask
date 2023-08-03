@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ super() }} - {{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        {% for i in range(len_objec) %}
+            <p class="col-12 col-md-6">Название книги: {{ res[i].Books.title_books }}<br>
+        Автор: {{ res[i].Author.first_name }}
+        </p>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <table>
+        <thead>
+        <th>id&emsp;</th>
+        <th>title&emsp;</th>
+        <th>description&emsp;</th>
+        <th>genre</th>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+        <tr>
+            <td>{{ movie.id }}&emsp;</td>
+            <td>{{ movie.title }}&emsp;</td>
+            <td>{{ movie.description }}&emsp;</td>
+            <td>{{ movie.genre }}</td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+{% endblock %}
