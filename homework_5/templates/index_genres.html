@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <table>
+        <thead>
+        <th>id&emsp;</th>
+        <th>title&emsp;</th>
+        <th>description&emsp;</th>
+        <th>genre</th>
+        </thead>
+        <tbody>
+            {% for genre in genres %}
+            <tr>
+                <td>{{ genre.id }}&emsp;</td>
+                <td>{{ genre.title }}&emsp;</td>
+                <td>{{ genre.description }}&emsp;</td>
+                <td>{{ genre.genre }}</td>
+            </tr>
+            {% else %}
+                <p>Такого жанра нет.</p>p>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+{% endblock %}

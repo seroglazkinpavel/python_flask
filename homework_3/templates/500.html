@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row alert alert-danger">
+      <p class="col-12">Такое имя уже есть.<br>
+      <a href="{{ url_for('registration') }}">Перейдите на страницу регистрации</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}
